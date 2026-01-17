@@ -6,21 +6,22 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener('click', function(){
     myLeads.push(inputEl.value)
     renderLeads()
-
+    inputEl.value = ""
 })  
 
 function renderLeads() {
-    let listItems = ""
-    for (let i = 0; i < myLeads.length; i++){
-        listItems += '<li>' + myLeads[i] + '</li>'
+    let listItem = '<li>' + inputEl.value + '</li>'
+    
+    // for (let i = 0; i < myLeads.length; i++){
+    //     listItems += '<li>' + myLeads[i] + '</li>'
 
         //this way of implementing is more advanced and more prefered!!!
         // const li = document.createElement('li')
         // li.textContent = myLeads[i]
         // ulEl.append(li)
-    } 
-    ulEl.innerHTML = listItems
-    inputEl.value = ""
+    // } 
+    ulEl.innerHTML += listItem
+
 }
 
 
